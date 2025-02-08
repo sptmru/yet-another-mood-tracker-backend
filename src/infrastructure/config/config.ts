@@ -16,6 +16,7 @@ export const config = {
     user: parsedConfig?.DB_USER != null ? parsedConfig.DB_USER : 'postgres',
     password: parsedConfig?.DB_PASSWORD != null ? parsedConfig.DB_PASSWORD : 'postgres',
     name: parsedConfig?.DB_NAME != null ? parsedConfig.DB_NAME : 'yet-another-mood-tracker',
+    logging: parsedConfig?.DB_LOGGING != null ? parsedConfig.DB_LOGGING.toLowerCase() === 'true' : false,
   },
   api: {
     port: parsedConfig?.HTTP_PORT != null ? Number(parsedConfig.HTTP_PORT) : 3000,
