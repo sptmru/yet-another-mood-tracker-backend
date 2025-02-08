@@ -4,6 +4,12 @@
 echo "Updating .env"
 sed -i "s|LOG_LEVEL=debug|LOG_LEVEL=${LOG_LEVEL:-info}|" ./build/.env
 
+sed -i "s|HTTP_HOSTNAME=http://localhost|HTTP_HOSTNAME=${HTTP_HOSTNAME:-http://localhost}|" ./build/.env
+sed -i "s|HTTP_PORT=3000|HTTP_PORT=${HTTP_PORT:-3000}|" ./build/.env
+
+sed -i "s|API_BASE_PREFIX=/api/v1|API_BASE_PREFIX=${API_BASE_PREFIX:-/api/v1}|" ./build/.env
+sed -i "s|API_AUTH_TOKEN=secret|API_AUTH_TOKEN=${API_AUTH_TOKEN:-secret}|" ./build/.env
+
 sed -i "s|LOKI_ENABLED=false|LOKI_ENABLED=${LOKI_ENABLED:-false}|" ./build/.env
 sed -i "s|LOKI_ENDPOINT=http://loki-gateway.svc.cluster.local|LOKI_ENDPOINT=${LOKI_ENDPOINT:-http://loki-gateway.svc.cluster.local}|" ./build/.env
 sed -i "s|LOKI_LABEL_JOB=yet-another-mood-tracker-api|LOKI_LABEL_JOB=${LOKI_LABEL_JOB:-yet-another-mood-tracker-api}|" ./build/.env
