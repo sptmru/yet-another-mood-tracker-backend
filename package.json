@@ -9,8 +9,8 @@
     "start:nodemon": "nodemon --config nodemon.json",
     "start:prod": "cd build && node app.js",
     "build": "tsc",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint --fix --ext .ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
     "format": "prettier --write \"**/*.{js,ts}\""
   },
   "author": "Soslan Aldatov <soslanaldatov@gmail.com>",
