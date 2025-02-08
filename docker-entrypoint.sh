@@ -6,6 +6,12 @@ sed -i "s|MODE=development|MODE=${MODE:-development}|" ./build/.env
 
 sed -i "s|LOG_LEVEL=debug|LOG_LEVEL=${LOG_LEVEL:-info}|" ./build/.env
 
+sed -i "s|DB_HOST=postgres|DB_HOST=${DB_HOST:-postgres}|" ./build/.env
+sed -i "s|DB_PORT=5432|DB_PORT=${DB_PORT:-5432}|" ./build/.env
+sed -i "s|DB_USER=postgres|DB_USER=${DB_USER:-postgres}|" ./build/.env
+sed -i "s|DB_PASSWORD=postgres|DB_PASSWORD=${DB_PASSWORD:-postgres}|" ./build/.env
+sed -i "s|DB_NAME=yet-another-mood-tracker|DB_NAME=${DB_NAME:-yet-another-mood-tracker}|" ./build/.env
+
 sed -i "s|HTTP_HOSTNAME=http://localhost|HTTP_HOSTNAME=${HTTP_HOSTNAME:-http://localhost}|" ./build/.env
 sed -i "s|HTTP_PORT=3000|HTTP_PORT=${HTTP_PORT:-3000}|" ./build/.env
 

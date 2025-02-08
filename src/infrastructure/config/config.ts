@@ -10,6 +10,13 @@ export const config = {
     file: `${parsedConfig?.LOG_LEVEL != null ? parsedConfig.LOG_LEVEL : 'debug'}.log`,
     logToFile: parsedConfig?.LOG_TO_FILE != null ? parsedConfig.LOG_TO_FILE.toLowerCase() === 'true' : false,
   },
+  db: {
+    host: parsedConfig?.DB_HOST != null ? parsedConfig.DB_HOST : 'postgres',
+    port: parsedConfig?.DB_PORT != null ? Number(parsedConfig.DB_PORT) : 5432,
+    user: parsedConfig?.DB_USER != null ? parsedConfig.DB_USER : 'postgres',
+    password: parsedConfig?.DB_PASSWORD != null ? parsedConfig.DB_PASSWORD : 'postgres',
+    name: parsedConfig?.DB_NAME != null ? parsedConfig.DB_NAME : 'yet-another-mood-tracker',
+  },
   api: {
     port: parsedConfig?.HTTP_PORT != null ? Number(parsedConfig.HTTP_PORT) : 3000,
     hostname: parsedConfig?.HTTP_HOSTNAME != null ? parsedConfig.HTTP_HOSTNAME : 'http://localhost',
