@@ -11,7 +11,12 @@
     "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write \"**/*.{js,ts}\""
+    "format": "prettier --write \"**/*.{js,ts}\"",
+    "typeorm": "ts-node ./node_modules/typeorm/cli",
+    "migrations:generate": "npm run typeorm -- -d ./src/infrastructure/database/data-source.ts migration:generate ./src/migrations/$npm_config_name",
+    "migrations:create": "npm run typeorm -- migration:create ./src/infrastructure/database/migrations/$npm_config_name",
+    "migrations:run": "npm run typeorm migration:run -- -d ./src/infrastructure/database/data-source.ts",
+    "migrations:revert": "npm run typeorm migration:revert -- -d ./src/infrastructure/database/data-source.ts"
   },
   "author": "Soslan Aldatov <soslanaldatov@gmail.com>",
   "license": "AGPL-3.0",
@@ -37,6 +42,7 @@
     "@pskzcompany/winston-graylog": "^1.0.1",
     "dotenv": "^16.4.7",
     "fastify": "^5.2.1",
+    "pg": "^8.13.1",
     "typeorm": "^0.3.20",
     "winston": "^3.17.0",
     "winston-log2gelf": "^2.4.1",
