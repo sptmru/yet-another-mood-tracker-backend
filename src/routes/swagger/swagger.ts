@@ -1,3 +1,4 @@
+import { AppRunningMode } from '../../domain/misc/mode.enum';
 import { config } from '../../infrastructure/config/config';
 
 export const swaggerOptions = {
@@ -12,7 +13,10 @@ export const swaggerOptions = {
     produces: ['application/json'],
     servers: [
       {
-        url: config.api.hostname,
+        url:
+          config.mode === AppRunningMode.DEVELOPMENT
+            ? `${config.api.hostname}:${config.api.port}`
+            : config.api.hostname,
       },
     ],
     components: {
