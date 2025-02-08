@@ -6,6 +6,9 @@ export class Mood {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column({ type: 'date', nullable: false })
+  date: string;
+
   @Column({ type: 'int', nullable: false })
   rating: number;
 
