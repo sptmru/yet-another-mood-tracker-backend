@@ -10,14 +10,14 @@ module.exports = [
       parser: tsp,
       parserOptions: {
         project: "./tsconfig.json",
+        ecmaVersion: "latest", // Enables latest JavaScript features
       },
       globals: {
         process: "readonly",
         console: "readonly",
-      },
-      env: {
-        node: true,
-        es2020: true,
+        __dirname: "readonly",
+        module: "readonly",
+        require: "readonly",
       },
     },
     plugins: {
