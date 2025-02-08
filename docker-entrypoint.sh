@@ -2,6 +2,8 @@
 
 # Update .env
 echo "Updating .env"
+sed -i "s|MODE=development|MODE=${MODE:-development}|" ./build/.env
+
 sed -i "s|LOG_LEVEL=debug|LOG_LEVEL=${LOG_LEVEL:-info}|" ./build/.env
 
 sed -i "s|HTTP_HOSTNAME=http://localhost|HTTP_HOSTNAME=${HTTP_HOSTNAME:-http://localhost}|" ./build/.env

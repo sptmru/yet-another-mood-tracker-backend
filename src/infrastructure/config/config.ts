@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv';
 const parsedConfig = dotenv.config().parsed;
 
 export const config = {
+  mode: parsedConfig?.MODE != null ? parsedConfig.MODE : 'development',
   log: {
     level: parsedConfig?.LOG_LEVEL != null ? parsedConfig.LOG_LEVEL : 'debug',
     directory: parsedConfig?.LOG_DIRECTORY != null ? parsedConfig.LOG_DIRECTORY : './logs',
