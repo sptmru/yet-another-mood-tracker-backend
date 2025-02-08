@@ -1,9 +1,14 @@
-import { MoodDefinition } from './domain/definitions/mood.definition';
+import {
+  MoodDefinition,
+  MoodWithoutReasonsDefinition,
+  UpdateMoodDTODefinition,
+} from './domain/definitions/mood.definition';
 import { ReasonDefinition } from './domain/definitions/reason.definition';
 import { Api } from './infrastructure/api/server';
 import { dataSource } from './infrastructure/database/data-source';
 import { logger } from './misc/Logger';
 import { HealthRoute } from './routes/health/health.route';
+import { MoodRoute } from './routes/mood/mood.route';
 import { ReasonRoute } from './routes/reason/reason.route';
 
 void (async (): Promise<void> => {
@@ -16,8 +21,8 @@ void (async (): Promise<void> => {
 
   const api = new Api({
     plugins: [],
-    routes: [HealthRoute, ReasonRoute],
-    definitions: [MoodDefinition, ReasonDefinition],
+    routes: [HealthRoute, ReasonRoute, MoodRoute],
+    definitions: [MoodDefinition, ReasonDefinition, UpdateMoodDTODefinition, MoodWithoutReasonsDefinition],
   });
   api.listen();
 
