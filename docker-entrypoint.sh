@@ -33,6 +33,10 @@ sed -i "s|GRAYLOG_HOSTNAME=graylog|GRAYLOG_HOSTNAME=${GRAYLOG_HOSTNAME:-graylog}
 sed -i "s|GRAYLOG_FACILITY=yet-another-mood-tracker-api|GRAYLOG_FACILITY=${GRAYLOG_FACILITY:-yet-another-mood-tracker-api}|" ./build/.env
 sed -i "s|GRAYLOG_BUFFER_SIZE=1400|GRAYLOG_BUFFER_SIZE=${GRAYLOG_BUFFER_SIZE:-1400}|" ./build/.env
 
+# Run DB migrations
+
+npm run migrations:run
+
 # Start service
 echo "Starting app"
 cd build && node app.js
