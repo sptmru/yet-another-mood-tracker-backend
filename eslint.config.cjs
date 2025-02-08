@@ -7,8 +7,17 @@ module.exports = [
   js.configs.recommended,
   {
     languageOptions: {
+      parser: tsp,
       parserOptions: {
         project: "./tsconfig.json",
+      },
+      globals: {
+        process: "readonly",
+        console: "readonly",
+      },
+      env: {
+        node: true,
+        es2020: true,
       },
     },
     plugins: {
