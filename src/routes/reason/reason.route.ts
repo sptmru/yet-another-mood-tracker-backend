@@ -1,13 +1,12 @@
 import { FastifyInstance } from 'fastify';
+
 import { ReasonController } from '../../controllers/reason/reason.controller';
-import {
-  addReasonRouteOptions,
-  deleteReasonRouteOptions,
-  findReasonByNameRouteOptions,
-  getReasonByIdRouteOptions,
-  getReasonsRouteOptions,
-  updateReasonRouteOptions,
-} from './reason.route-options';
+import { getReasonsRouteOptions } from './options/get-reasons.route-options';
+import { getReasonByIdRouteOptions } from './options/get-reason-by-id.route-options';
+import { findReasonByNameRouteOptions } from './options/find-reason-by-name.route-options';
+import { addReasonRouteOptions } from './options/add-reason.route-options';
+import { deleteReasonRouteOptions } from './options/delete-reason.route-options';
+import { updateReasonRouteOptions } from './options/update-reason.route-options';
 
 export class ReasonRoute {
   public prefix = '/reasons';
